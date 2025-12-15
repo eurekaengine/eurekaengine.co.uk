@@ -1,0 +1,25 @@
+# robots.txt for Eureka Engine
+# https://eurekaengine.co.uk
+
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow these if you don't want them indexed (uncomment if needed)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://eurekaengine.co.uk/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
