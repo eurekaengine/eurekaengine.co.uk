@@ -145,8 +145,7 @@
 
         /* Main Content */
         main {
-            margin-top: 90px;
-            padding: 60px 2rem;
+            padding: 150px 2rem 60px;
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
@@ -258,6 +257,23 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
+        .footer-credit {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-credit a {
+            color: #a855f7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-credit a:hover {
+            color: #3b82f6;
+            text-decoration: underline;
+        }
+
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -302,12 +318,10 @@
                 left: -100%;
                 top: 70px;
                 flex-direction: column;
-                background-color: #000000;
                 width: 100%;
                 height: calc(100vh - 70px);
                 text-align: center;
                 transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
                 padding: 2rem 0;
                 gap: 0;
                 overflow-y: auto;
@@ -315,6 +329,7 @@
 
             .nav-links.active {
                 left: 0;
+                background-color: #000000;
             }
 
             .nav-links li {
@@ -338,7 +353,7 @@
             }
 
             main {
-                padding: 40px 1rem;
+                padding: 120px 1rem 40px;
             }
         }
     </style>
@@ -523,9 +538,10 @@
         <p>Professional cybersecurity solutions for a safer digital world.</p>
         <div class="footer-links">
             <a href="terms-of-use.html">Terms of Use</a>
-            <span>|</span>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
             <a href="privacy-policy.html">Privacy Policy</a>
         </div>
+        <p class="footer-credit">Website by <a href="https://www.emwonline.co.uk/" target="_blank" rel="noopener noreferrer"><strong>EMWONLINE Design</strong></a></p>
     </footer>
 
     <button id="backToTop" class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
@@ -541,6 +557,13 @@
             const toggle = document.querySelector('.mobile-menu-toggle');
             navLinks.classList.toggle('active');
             toggle.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            navLinks.classList.remove('active');
+            toggle.classList.remove('active');
         }
 
         // Add scroll effect to header

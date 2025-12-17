@@ -17,6 +17,10 @@ Allow: /
 # Disallow these if you don't want them indexed (uncomment if needed)
 # Disallow: /admin/
 # Disallow: /private/
+# Disallow: /coming-soon.html
+
+# Pages not ready for indexing
+# Disallow: /404.html
 
 # Sitemap location
 Sitemap: https://eurekaengine.co.uk/sitemap.xml
