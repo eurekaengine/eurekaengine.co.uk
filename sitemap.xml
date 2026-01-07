@@ -6,7 +6,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://eurekaengine.co.uk/</loc>
+    <loc>https://www.eurekaengine.co.uk/</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- Privacy Policy -->
   <url>
-    <loc>https://eurekaengine.co.uk/privacy-policy.html</loc>
+    <loc>https://www.eurekaengine.co.uk/privacy-policy.html</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -22,7 +22,7 @@
 
   <!-- Terms of Use -->
   <url>
-    <loc>https://eurekaengine.co.uk/terms-of-use.html</loc>
+    <loc>https://www.eurekaengine.co.uk/terms-of-use.html</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
