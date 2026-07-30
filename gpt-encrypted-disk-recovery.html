@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I gave GPT a 20 year old encrypted disk. It won. | Eureka Engine</title>
+    <title>I gave GPT my 20 year old disk decrypt challenge. It won. | Eureka Engine</title>
     <meta name="description" content="How GPT reconstructed an old plain dm-crypt setup, searched a forensic disk image and recovered a deleted encryption key without breaking cryptography.">
     <meta name="author" content="Eureka Engine Ltd">
     <link rel="canonical" href="https://eurekaengine.co.uk/gpt-encrypted-disk-recovery.html">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="blog.css">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://eurekaengine.co.uk/gpt-encrypted-disk-recovery.html">
-    <meta property="og:title" content="I gave GPT a 20 year old encrypted disk. It won.">
+    <meta property="og:title" content="I gave GPT my 20 year old disk decrypt challenge. It won.">
     <meta property="og:description" content="The encryption held. GPT recovered the key by reconstructing a forgotten Linux setup and investigating the raw disk image.">
     <meta property="og:image" content="https://eurekaengine.co.uk/og-image.jpg">
     <meta property="og:site_name" content="Eureka Engine">
@@ -19,14 +19,14 @@
     <meta property="article:section" content="Digital forensics">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@eureka_engine">
-    <meta name="twitter:title" content="I gave GPT a 20 year old encrypted disk. It won.">
+    <meta name="twitter:title" content="I gave GPT my 20 year old disk decrypt challenge. It won.">
     <meta name="twitter:description" content="GPT did not crack the encryption. It reconstructed an old Linux setup and found the deleted key bytes on disk.">
     <meta name="twitter:image" content="https://eurekaengine.co.uk/twitter-card.jpg">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "headline": "I gave GPT a 20 year old encrypted disk. It won.",
+        "headline": "I gave GPT my 20 year old disk decrypt challenge. It won.",
         "description": "How GPT reconstructed an old plain dm-crypt setup and recovered a deleted encryption key from a forensic disk image.",
         "datePublished": "2026-07-30",
         "dateModified": "2026-07-30",
@@ -62,8 +62,8 @@
         <header class="article-hero">
             <div class="article-hero-inner">
                 <p class="eyebrow">Digital forensics / AI</p>
-                <h1>I gave GPT a 20 year old encrypted disk. It won.</h1>
-                <p class="standfirst">GPT 5.6 Sol did not break any cryptography. It did not crack AES, defeat dm-crypt or brute force a password. What it did was more interesting.</p>
+                <h1>I gave GPT my 20 year old disk decrypt challenge. It won.</h1>
+                <p class="standfirst">GPT 5.6 Sol did not break any cryptography. It did not crack AES, defeat dm-crypt or brute force a password. What it did was was interesting.</p>
                 <div class="article-meta"><time datetime="2026-07-30">30 July 2026</time><span aria-hidden="true">/</span><span>20 min read</span><span aria-hidden="true">/</span><span>Eureka Engine</span></div>
             </div>
         </header>
@@ -150,6 +150,14 @@
                 <p>Before the AI found the key, it tried plenty of things that failed. That's important because it approached it like a genuine investigation with lots of experimentation.</p>
                 <p>Here's roughly how it went.</p>
 
+                <figure class="article-figure">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="images/forensic-investigation-method-mobile.svg">
+                        <img src="images/forensic-investigation-method.svg" alt="An evidence-led forensic method: preserve the source, understand the context, perform controlled experiments, then test, record and refine" width="1200" height="620" loading="lazy">
+                    </picture>
+                    <figcaption>The investigation was iterative: preserve the evidence, understand the context, run controlled experiments and let every result shape the next question.</figcaption>
+                </figure>
+
                 <h3>Step 1: Understand the setup, not the ciphertext</h3>
                 <p>The first thing the AI did was mount the <em>unencrypted</em> parts of the disk read only. This was the boot partition and the system partition. It did not touch the encrypted partition. What it wanted to know was how the system was configured, that was in plain text on the system partition, not on the encrypted volume.</p>
                 <p>By reading <code>/etc/crypttab</code> it immediately changed the problem after seeing this:</p>
@@ -207,6 +215,11 @@
                 <p>Secondly, it validated much more cheaply. My tool relied on Linux's own mounting behaviour to check, which is why I spent months chasing false positives. The AI decrypted only the first few sectors and looked directly at the ext3 superblock. The magic number. The inode count. The block count. The block size. If those weren't sane, the candidate was thrown away in milliseconds and it moved on.</p>
                 <p>Most candidates produced obvious noise but one didn't!</p>
                 <p>At which point I had my home directory back.</p>
+
+                <figure class="article-figure">
+                    <img src="images/im-in-recovery.svg" alt="Retro terminal showing a valid ext3 superblock, the recovered home directory and the words I'm in" width="1200" height="675" loading="lazy">
+                    <figcaption>The technically accurate version of the reaction.</figcaption>
+                </figure>
 
                 <aside class="technical-note" aria-label="Technical note about recovering the original key">
                     <p><strong>Technical note - "found the key" doesn't mean "cracked the encryption"</strong></p>

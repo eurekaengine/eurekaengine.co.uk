@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title description">
+    <title id="title">I'm in - successful disk recovery</title>
+    <desc id="description">A retro green terminal showing a valid ext3 superblock, a mounted home directory and the words I'm in.</desc>
+    <defs>
+        <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+            <rect width="4" height="2" fill="#ffffff" opacity="0.018"/>
+        </pattern>
+        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+    </defs>
+
+    <rect width="1200" height="675" fill="#050806"/>
+    <rect x="42" y="42" width="1116" height="591" rx="12" fill="#08100b" stroke="#2c5f3d" stroke-width="2"/>
+    <rect x="42" y="42" width="1116" height="54" rx="12" fill="#101a14"/>
+    <circle cx="76" cy="69" r="8" fill="#ff6b6b"/>
+    <circle cx="104" cy="69" r="8" fill="#f7cc5b"/>
+    <circle cx="132" cy="69" r="8" fill="#69db8f"/>
+    <text x="600" y="76" fill="#70927a" font-family="Consolas, Courier New, monospace" font-size="17" text-anchor="middle">forensics@recovery: /mnt/home</text>
+
+    <g font-family="Consolas, Courier New, monospace" font-size="21">
+        <text x="86" y="144" fill="#57c97a">$ candidate-test --block 00437 --bytes 80</text>
+        <text x="86" y="184" fill="#7d9c85">[+] dm-crypt mapping created</text>
+        <text x="86" y="224" fill="#7d9c85">[+] ext3 magic:</text>
+        <text x="310" y="224" fill="#78e6a3">0xEF53</text>
+        <text x="86" y="264" fill="#7d9c85">[+] superblock:</text>
+        <text x="310" y="264" fill="#78e6a3">valid</text>
+        <text x="86" y="304" fill="#7d9c85">[+] mount:</text>
+        <text x="310" y="304" fill="#78e6a3">/mnt/home</text>
+        <text x="86" y="344" fill="#57c97a">$ ls /mnt/home</text>
+        <text x="86" y="384" fill="#b5c7ba">Desktop  Documents  Mail  Photos  Projects</text>
+    </g>
+
+    <line x1="86" y1="428" x2="1114" y2="428" stroke="#23412c" stroke-width="2"/>
+    <text x="86" y="536" fill="#78e6a3" filter="url(#glow)" font-family="Consolas, Courier New, monospace" font-size="100" font-weight="700" letter-spacing="4">I'M IN.</text>
+    <rect x="42" y="42" width="1116" height="591" rx="12" fill="url(#scanlines)"/>
+</svg>

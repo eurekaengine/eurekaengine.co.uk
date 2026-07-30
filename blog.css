@@ -60,7 +60,11 @@ a { color: var(--blue); }
 .article-body blockquote { border-left: 4px solid var(--blue); color: #272b35; font-size: 1.15rem; font-weight: 600; padding: 0.4rem 0 0.4rem 1.5rem; }
 .article-body pre { background: #0d0f14; border-left: 4px solid var(--violet); color: #dbe8ff; overflow-x: auto; padding: 1.25rem; }
 .article-body code { font-family: Consolas, "Courier New", monospace; }
-.article-body :not(pre) > code { background: #eef1f6; border-radius: 4px; padding: 0.1em 0.3em; }
+.article-body :not(pre) > code { background: #eef1f6; border-radius: 4px; overflow-wrap: anywhere; padding: 0.1em 0.3em; }
+.article-figure { margin: 2.8rem 0; }
+.article-figure picture { display: block; }
+.article-figure img { background: #090a0e; border: 1px solid #242733; display: block; height: auto; width: 100%; }
+.article-figure figcaption { color: var(--muted); font-size: 0.9rem; margin-top: 0.7rem; }
 .technical-note { background: var(--soft); border: 1px solid var(--line); padding: 1.5rem; }
 .technical-note strong:first-child { color: var(--blue); }
 .article-aside { align-self: start; position: sticky; top: 120px; }

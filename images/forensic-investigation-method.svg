@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title description">
+    <title id="title">An evidence-led forensic investigation method</title>
+    <desc id="description">A clockwise forensic loop connecting four practices: preserve the source, understand the context, perform controlled experiments, and test, record and refine.</desc>
+    <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#252a35" stroke-width="1"/>
+        </pattern>
+        <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 Z" fill="#7da9ff"/>
+        </marker>
+        <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 Z" fill="#c590ff"/>
+        </marker>
+    </defs>
+
+    <rect width="1200" height="720" fill="#090a0e"/>
+    <rect width="1200" height="720" fill="url(#grid)" opacity="0.6"/>
+
+    <text x="60" y="62" fill="#9fc0ff" font-family="Consolas, Courier New, monospace" font-size="17" font-weight="700" letter-spacing="3">FORENSIC METHOD / EVIDENCE BEFORE ASSUMPTIONS</text>
+    <text x="60" y="106" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="34" font-weight="700">A robust investigation is a loop, not a lucky guess</text>
+
+    <g font-family="Segoe UI, sans-serif">
+        <rect x="60" y="154" width="500" height="184" fill="#141720" stroke="#3b82f6" stroke-width="2"/>
+        <text x="88" y="190" fill="#7da9ff" font-family="Consolas, Courier New, monospace" font-size="14" font-weight="700" letter-spacing="1">01 / PRESERVE</text>
+        <text x="88" y="232" fill="#ffffff" font-size="27" font-weight="700">Protect the source</text>
+        <text x="88" y="272" fill="#a8afbe" font-size="18">Work from a forensic image</text>
+        <text x="88" y="303" fill="#a8afbe" font-size="18">Mount read only and record every action</text>
+
+        <rect x="640" y="154" width="500" height="184" fill="#141720" stroke="#454c5f" stroke-width="2"/>
+        <text x="668" y="190" fill="#7da9ff" font-family="Consolas, Courier New, monospace" font-size="14" font-weight="700" letter-spacing="1">02 / CONTEXT</text>
+        <text x="668" y="232" fill="#ffffff" font-size="27" font-weight="700">Understand context</text>
+        <text x="668" y="272" fill="#a8afbe" font-size="18">Read configuration, code and old docs</text>
+        <text x="668" y="303" fill="#a8afbe" font-size="18">Separate disk evidence from memory</text>
+
+        <rect x="60" y="406" width="500" height="184" fill="#141720" stroke="#454c5f" stroke-width="2"/>
+        <text x="88" y="442" fill="#c590ff" font-family="Consolas, Courier New, monospace" font-size="14" font-weight="700" letter-spacing="1">04 / TEST AND REFINE</text>
+        <text x="88" y="484" fill="#ffffff" font-size="27" font-weight="700">Learn from every test</text>
+        <text x="88" y="524" fill="#a8afbe" font-size="18">Automate repeatably and log failures</text>
+        <text x="88" y="555" fill="#a8afbe" font-size="18">Use each result to narrow the next search</text>
+
+        <rect x="640" y="406" width="500" height="184" fill="#141720" stroke="#a855f7" stroke-width="2"/>
+        <text x="668" y="442" fill="#c590ff" font-family="Consolas, Courier New, monospace" font-size="14" font-weight="700" letter-spacing="1">03 / EXPERIMENT</text>
+        <text x="668" y="484" fill="#ffffff" font-size="27" font-weight="700">Perform experiments</text>
+        <text x="668" y="524" fill="#a8afbe" font-size="18">State what should be true</text>
+        <text x="668" y="555" fill="#a8afbe" font-size="18">Choose a cheap test that could disprove it</text>
+    </g>
+
+    <path d="M 560 246 L 624 246" fill="none" stroke="#7da9ff" stroke-width="3" marker-end="url(#arrowBlue)"/>
+    <path d="M 890 338 L 890 390" fill="none" stroke="#7da9ff" stroke-width="3" marker-end="url(#arrowBlue)"/>
+    <path d="M 640 498 L 576 498" fill="none" stroke="#c590ff" stroke-width="3" marker-end="url(#arrowPurple)"/>
+    <path d="M 310 406 L 310 354" fill="none" stroke="#c590ff" stroke-width="3" marker-end="url(#arrowPurple)"/>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1200" role="img" aria-labelledby="title description">
+    <title id="title">An evidence-led forensic investigation method</title>
+    <desc id="description">A vertical loop connecting four forensic practices: preserve the source, understand the context, perform controlled experiments, and test, record and refine.</desc>
+    <defs>
+        <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+            <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#252a35" stroke-width="1"/>
+        </pattern>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 Z" fill="#7da9ff"/>
+        </marker>
+    </defs>
+
+    <rect width="600" height="1430" fill="#090a0e"/>
+    <rect width="600" height="1430" fill="url(#grid)" opacity="0.6"/>
+    <text x="36" y="48" fill="#9fc0ff" font-family="Consolas, Courier New, monospace" font-size="15" font-weight="700" letter-spacing="2">FORENSIC METHOD</text>
+    <text x="36" y="88" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">Evidence before assumptions</text>
+    <text x="36" y="119" fill="#a8afbe" font-family="Segoe UI, sans-serif" font-size="17">A robust investigation is a loop, not a lucky guess.</text>
+
+    <g font-family="Segoe UI, sans-serif">
+        <rect x="36" y="160" width="528" height="210" fill="#141720" stroke="#3b82f6" stroke-width="2"/>
+        <text x="66" y="199" fill="#7da9ff" font-family="Consolas, Courier New, monospace" font-size="15" font-weight="700">01 / PRESERVE</text>
+        <text x="66" y="244" fill="#ffffff" font-size="27" font-weight="700">Protect the source</text>
+        <text x="66" y="290" fill="#a8afbe" font-size="19">Work from a forensic image.</text>
+        <text x="66" y="326" fill="#a8afbe" font-size="19">Mount read only. Record every action.</text>
+
+        <line x1="300" y1="370" x2="300" y2="408" stroke="#7da9ff" stroke-width="3" marker-end="url(#arrow)"/>
+
+        <rect x="36" y="424" width="528" height="210" fill="#141720" stroke="#454c5f" stroke-width="2"/>
+        <text x="66" y="463" fill="#7da9ff" font-family="Consolas, Courier New, monospace" font-size="15" font-weight="700">02 / CONTEXT</text>
+        <text x="66" y="508" fill="#ffffff" font-size="27" font-weight="700">Understand context</text>
+        <text x="66" y="554" fill="#a8afbe" font-size="19">Read configuration, code and old docs.</text>
+        <text x="66" y="590" fill="#a8afbe" font-size="19">Separate disk evidence from memory.</text>
+
+        <line x1="300" y1="634" x2="300" y2="672" stroke="#7da9ff" stroke-width="3" marker-end="url(#arrow)"/>
+
+        <rect x="36" y="688" width="528" height="210" fill="#141720" stroke="#a855f7" stroke-width="2"/>
+        <text x="66" y="727" fill="#c590ff" font-family="Consolas, Courier New, monospace" font-size="15" font-weight="700">03 / EXPERIMENT</text>
+        <text x="66" y="772" fill="#ffffff" font-size="27" font-weight="700">Perform experiments</text>
+        <text x="66" y="818" fill="#a8afbe" font-size="19">State what should be true.</text>
+        <text x="66" y="854" fill="#a8afbe" font-size="19">Choose a cheap test that could disprove it.</text>
+
+        <line x1="300" y1="898" x2="300" y2="936" stroke="#c590ff" stroke-width="3" marker-end="url(#arrow)"/>
+
+        <rect x="36" y="952" width="528" height="210" fill="#141720" stroke="#a855f7" stroke-width="2"/>
+        <text x="66" y="991" fill="#c590ff" font-family="Consolas, Courier New, monospace" font-size="15" font-weight="700">04 / TEST AND REFINE</text>
+        <text x="66" y="1036" fill="#ffffff" font-size="27" font-weight="700">Learn from every test</text>
+        <text x="66" y="1082" fill="#a8afbe" font-size="19">Automate repeatably. Log failures.</text>
+        <text x="66" y="1118" fill="#a8afbe" font-size="19">Let each result narrow the next search.</text>
+    </g>
+
+    <path d="M 564 1056 C 592 1056, 592 248, 564 248" fill="none" stroke="#7da9ff" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+</svg>
