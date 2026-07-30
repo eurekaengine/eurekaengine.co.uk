@@ -39,27 +39,6 @@
     <link rel="preload" as="image" href="favicon.png">
     <link rel="preload" as="image" href="hero-logo.svg">
     
-    <!-- Google tag (gtag.js) - Loads only after cookie consent -->
-    <script>
-        // Check if user has already accepted cookies
-        const cookieConsent = localStorage.getItem('cookieConsent');
-        if (cookieConsent === 'accepted') {
-            // Load Google Analytics immediately if consent already given
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-0DVRF6HCWZ';
-            document.head.appendChild(script);
-            
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-0DVRF6HCWZ');
-        } else if (cookieConsent === 'declined') {
-            // Disable Google Analytics if user declined
-            window['ga-disable-G-0DVRF6HCWZ'] = true;
-        }
-    </script>
-    
     <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
     {
@@ -350,98 +329,6 @@
             background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5);
-        }
-
-        /* Cookie Notification */
-        .cookie-notification {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            z-index: 9999;
-            border-top: 2px solid;
-            border-image: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%) 1;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .cookie-notification.show {
-            transform: translateY(0);
-        }
-
-        .cookie-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .cookie-text {
-            flex: 1;
-            color: white;
-        }
-
-        .cookie-text p {
-            margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .cookie-text p:first-child {
-            margin-bottom: 0.5rem;
-        }
-
-        .cookie-text a {
-            color: #a855f7;
-            text-decoration: underline;
-        }
-
-        .cookie-text a:hover {
-            color: #3b82f6;
-        }
-
-        .cookie-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .cookie-accept,
-        .cookie-decline {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            white-space: nowrap;
-        }
-
-        .cookie-accept {
-            background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
-            color: white;
-            box-shadow: 0 5px 20px rgba(168, 85, 247, 0.4);
-        }
-
-        .cookie-accept:hover {
-            background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5);
-        }
-
-        .cookie-decline {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .cookie-decline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
         }
 
         .cta-button {
@@ -1228,6 +1115,8 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="cookie-consent.css">
+    <script src="analytics-consent.js" defer></script>
 </head>
 <body>
     <header>
@@ -1448,20 +1337,6 @@
         <p class="footer-credit">Website by <a href="https://www.emwonline.co.uk/" target="_blank" rel="noopener noreferrer"><strong>EMWONLINE Design</strong></a></p>
     </footer>
 
-    <!-- Cookie Notification -->
-    <div id="cookieNotification" class="cookie-notification">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                <p><strong>🍪 We use cookies</strong></p>
-                <p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. See our <a href="privacy-policy.html">Privacy Policy</a> for more information.</p>
-            </div>
-            <div class="cookie-buttons">
-                <button onclick="acceptCookies()" class="cookie-accept">Accept All</button>
-                <button onclick="declineCookies()" class="cookie-decline">Decline</button>
-            </div>
-        </div>
-    </div>
-
     <button id="backToTop" class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 19V5M5 12l7-7 7 7"/>
@@ -1535,52 +1410,6 @@
             });
         }
 
-        // Cookie notification
-        function showCookieNotification() {
-            const cookieConsent = localStorage.getItem('cookieConsent');
-            if (!cookieConsent) {
-                setTimeout(() => {
-                    document.getElementById('cookieNotification').classList.add('show');
-                }, 1000);
-            } else if (cookieConsent === 'accepted') {
-                loadGoogleAnalytics();
-            }
-        }
-
-        function loadGoogleAnalytics() {
-            // Load Google Analytics script
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-0DVRF6HCWZ';
-            document.head.appendChild(script);
-
-            // Initialize dataLayer and gtag
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', 'G-0DVRF6HCWZ');
-        }
-
-        function acceptCookies() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            document.getElementById('cookieNotification').classList.remove('show');
-            loadGoogleAnalytics();
-        }
-
-        function declineCookies() {
-            localStorage.setItem('cookieConsent', 'declined');
-            document.getElementById('cookieNotification').classList.remove('show');
-            // Disable Google Analytics
-            window['ga-disable-G-0DVRF6HCWZ'] = true;
-            // Clear any existing GA cookies
-            document.cookie = '_ga=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-            document.cookie = '_gid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-            document.cookie = '_gat=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        }
-
-        // Show cookie notification on page load
-        window.addEventListener('load', showCookieNotification);
     </script>
 </body>
 </html>
