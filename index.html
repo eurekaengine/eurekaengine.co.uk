@@ -787,6 +787,102 @@
             transform: scale(1.05);
         }
 
+        /* Blog Section */
+        .blog-preview {
+            background: #f4f6fa;
+            padding: 80px 2rem;
+        }
+
+        .blog-preview-inner {
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .blog-preview-kicker {
+            color: #3b82f6;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .blog-preview-heading {
+            color: #111318;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .blog-feature {
+            align-items: stretch;
+            display: grid;
+            gap: 3rem;
+            grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+        }
+
+        .blog-feature-copy {
+            padding: 1rem 0;
+        }
+
+        .blog-feature-meta {
+            color: #666b78;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-feature h3 {
+            font-size: 2.25rem;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .blog-feature h3 a {
+            color: #111318;
+            text-decoration: none;
+        }
+
+        .blog-feature h3 a:hover {
+            color: #3b82f6;
+        }
+
+        .blog-feature p {
+            color: #454a58;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-read-link {
+            color: #3b82f6;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .blog-read-link:hover {
+            text-decoration: underline;
+        }
+
+        .blog-preview-visual {
+            background: #090a0e;
+            border-left: 4px solid #3b82f6;
+            color: white;
+            display: grid;
+            min-height: 300px;
+            padding: 2rem;
+            place-content: center;
+        }
+
+        .blog-preview-visual span {
+            border-bottom: 1px solid #353a4c;
+            display: block;
+            font-family: Consolas, 'Courier New', monospace;
+            padding: 0.7rem 0;
+        }
+
+        .blog-preview-visual span:last-child {
+            border-bottom: 0;
+            color: #a7c7ff;
+        }
+
         /* Contact Section */
         .contact {
             padding: 80px 2rem;
@@ -995,6 +1091,15 @@
                 grid-template-columns: 1fr;
             }
 
+            .blog-feature {
+                gap: 2rem;
+                grid-template-columns: 1fr;
+            }
+
+            .blog-feature h3 {
+                font-size: 1.8rem;
+            }
+
             .product-image {
                 min-height: 300px;
                 padding: 2rem;
@@ -1141,6 +1246,7 @@
                 <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
                 <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
                 <li><a href="#product" onclick="closeMobileMenu()">USB Army Knife PRO</a></li>
+                <li><a href="blog.html" onclick="closeMobileMenu()">Blog</a></li>
                 <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
             </ul>
         </nav>
@@ -1266,6 +1372,27 @@
         </div>
     </section>
 
+    <section id="blog" class="blog-preview">
+        <div class="blog-preview-inner">
+            <p class="blog-preview-kicker">Field notes</p>
+            <h2 class="blog-preview-heading">From the blog</h2>
+            <article class="blog-feature">
+                <div class="blog-feature-copy">
+                    <p class="blog-feature-meta"><time datetime="2026-07-30">30 July 2026</time> &middot; Digital forensics &middot; 20 min read</p>
+                    <h3><a href="gpt-encrypted-disk-recovery.html">I gave GPT a 20 year old encrypted disk. It won.</a></h3>
+                    <p>The encryption held. GPT recovered the data by reconstructing a forgotten Linux setup and patiently searching the raw disk image for the original key bytes.</p>
+                    <a class="blog-read-link" href="gpt-encrypted-disk-recovery.html">Read the investigation &rarr;</a>
+                </div>
+                <div class="blog-preview-visual" aria-hidden="true">
+                    <span>/etc/keys/home</span>
+                    <span>80-byte candidates</span>
+                    <span>plain dm-crypt</span>
+                    <span>ext3 superblock: valid</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
     <section id="contact" class="contact">
         <h2>Get In Touch</h2>
         <p class="tagline">Invent. Secure. Repeat.</p>
@@ -1312,6 +1439,8 @@
         <p>&copy; 2025 Eureka Engine Ltd. All rights reserved | Company No. 16839453.</p>
         <p>Professional cybersecurity solutions for a safer digital world.</p>
         <div class="footer-links">
+            <a href="blog.html">Blog</a>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
             <a href="terms-of-use.html">Terms of Use</a>
             <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
             <a href="privacy-policy.html">Privacy Policy</a>

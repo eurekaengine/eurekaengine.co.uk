@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Eureka Engine</title>
+    <meta name="description" content="Field notes from Eureka Engine on cybersecurity, hardware, digital forensics and the practical edge of AI.">
+    <meta name="author" content="Eureka Engine Ltd">
+    <link rel="canonical" href="https://eurekaengine.co.uk/blog.html">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="blog.css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eurekaengine.co.uk/blog.html">
+    <meta property="og:title" content="Blog | Eureka Engine">
+    <meta property="og:description" content="Field notes on cybersecurity, hardware, digital forensics and AI.">
+    <meta property="og:image" content="https://eurekaengine.co.uk/og-image.jpg">
+    <meta property="og:site_name" content="Eureka Engine">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@eureka_engine">
+    <meta name="twitter:title" content="Blog | Eureka Engine">
+    <meta name="twitter:description" content="Field notes on cybersecurity, hardware, digital forensics and AI.">
+    <meta name="twitter:image" content="https://eurekaengine.co.uk/twitter-card.jpg">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="index.html" class="logo-text" aria-label="Eureka Engine home">
+                <span class="logo-eureka">EUREKA</span><span class="logo-engine">ENGINE</span>
+            </a>
+            <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="primary-navigation">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#product">USB Army Knife PRO</a></li>
+                <li><a href="blog.html" aria-current="page">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="blog-hero">
+            <div class="blog-hero-inner">
+                <p class="eyebrow">Eureka Engine / Field notes</p>
+                <h1>Ideas worth taking apart.</h1>
+                <p>Long-form stories from the practical edge of cybersecurity, hardware, digital forensics and AI.</p>
+            </div>
+        </section>
+        <section class="blog-index" aria-labelledby="latest-posts">
+            <div class="section-heading"><h2 id="latest-posts">Latest</h2><span>1 article</span></div>
+            <article class="post-card">
+                <div class="post-card-copy">
+                    <div class="post-meta"><time datetime="2026-07-30">30 July 2026</time><span aria-hidden="true">/</span><span>20 min read</span><span aria-hidden="true">/</span><span>Digital forensics</span></div>
+                    <h2><a href="gpt-encrypted-disk-recovery.html">I gave GPT a 20 year old encrypted disk. It won.</a></h2>
+                    <p>GPT did not break AES or brute force a password. It read old Linux configuration, reconstructed a forgotten plain dm-crypt setup and patiently searched a disk image for the key bytes I had deleted years earlier.</p>
+                    <a class="read-link" href="gpt-encrypted-disk-recovery.html">Read the investigation</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Eureka Engine Ltd. All rights reserved | Company No. 16839453.</p>
+        <p>Professional cybersecurity solutions for a safer digital world.</p>
+        <div class="footer-links"><a href="blog.html">Blog</a><a href="terms-of-use.html">Terms of Use</a><a href="privacy-policy.html">Privacy Policy</a></div>
+    </footer>
+
+    <button class="back-to-top" type="button" aria-label="Back to top">&uarr;</button>
+    <script>
+        const menuButton = document.querySelector('.mobile-menu-toggle');
+        const navigation = document.querySelector('.nav-links');
+        const backToTop = document.querySelector('.back-to-top');
+        menuButton.addEventListener('click', () => {
+            const isOpen = navigation.classList.toggle('active');
+            menuButton.setAttribute('aria-expanded', isOpen);
+        });
+        navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+            navigation.classList.remove('active');
+            menuButton.setAttribute('aria-expanded', 'false');
+        }));
+        window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 300));
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+</html>

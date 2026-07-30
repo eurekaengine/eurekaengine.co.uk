@@ -12,6 +12,22 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Blog -->
+  <url>
+    <loc>https://eurekaengine.co.uk/blog.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- GPT encrypted disk recovery -->
+  <url>
+    <loc>https://eurekaengine.co.uk/gpt-encrypted-disk-recovery.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Privacy Policy -->
   <url>
     <loc>https://www.eurekaengine.co.uk/privacy-policy.html</loc>
