@@ -770,6 +770,12 @@
             color: #a7c7ff;
         }
 
+        .blog-preview-visual img {
+            display: block;
+            height: auto;
+            max-width: 100%;
+        }
+
         /* Contact Section */
         .contact {
             padding: 80px 2rem;
@@ -1267,16 +1273,13 @@
             <h2 class="blog-preview-heading">From the blog</h2>
             <article class="blog-feature">
                 <div class="blog-feature-copy">
-                    <p class="blog-feature-meta"><time datetime="2026-07-30">30 July 2026</time> &middot; Digital forensics &middot; 20 min read</p>
-                    <h3><a href="gpt-encrypted-disk-recovery.html">I gave GPT my 20 year old disk decryption challenge. It won.</a></h3>
-                    <p>The encryption held. GPT recovered the data by reconstructing a forgotten Linux setup and patiently searching the raw disk image for the original key bytes.</p>
-                    <a class="blog-read-link" href="gpt-encrypted-disk-recovery.html">Read the investigation &rarr;</a>
+                    <p class="blog-feature-meta"><time datetime="2026-08-05">5 August 2026</time> &middot; AI + hardware &middot; 15 min read</p>
+                    <h3><a href="can-ai-design-circuit-board.html">Can AI design a circuit board? We spent $360 finding out</a></h3>
+                    <p>I used AI to design a custom board, had five prototypes assembled in China and learned where automation stops being engineering judgement.</p>
+                    <a class="blog-read-link" href="can-ai-design-circuit-board.html">Read the build story &rarr;</a>
                 </div>
                 <div class="blog-preview-visual" aria-hidden="true">
-                    <span>/etc/keys/home</span>
-                    <span>80-byte candidates</span>
-                    <span>plain dm-crypt</span>
-                    <span>ext3 superblock: valid</span>
+                    <img src="images/usb-army-knife-kicad-layout.png" alt="" width="820" height="358" loading="lazy">
                 </div>
             </article>
         </div>
