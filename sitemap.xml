@@ -6,15 +6,39 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://eurekaengine.co.uk/</loc>
+    <loc>https://www.eurekaengine.co.uk/</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Blog -->
+  <url>
+    <loc>https://www.eurekaengine.co.uk/blog</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AI circuit board design -->
+  <url>
+    <loc>https://www.eurekaengine.co.uk/can-ai-design-circuit-board</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- GPT encrypted disk recovery -->
+  <url>
+    <loc>https://www.eurekaengine.co.uk/gpt-encrypted-disk-recovery</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Privacy Policy -->
   <url>
-    <loc>https://eurekaengine.co.uk/privacy-policy.html</loc>
+    <loc>https://www.eurekaengine.co.uk/privacy-policy.html</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -22,7 +46,7 @@
 
   <!-- Terms of Use -->
   <url>
-    <loc>https://eurekaengine.co.uk/terms-of-use.html</loc>
+    <loc>https://www.eurekaengine.co.uk/terms-of-use.html</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

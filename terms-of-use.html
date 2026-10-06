@@ -49,7 +49,7 @@
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1464px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -71,6 +71,14 @@
             align-items: center;
             letter-spacing: 0.15em;
         }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
 
         .logo-eureka {
             font-weight: 900;
@@ -104,6 +112,9 @@
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
         }
@@ -188,12 +199,12 @@
             color: #444;
         }
 
-        ul, ol {
+        main ul, main ol {
             margin-left: 2rem;
             margin-bottom: 1rem;
         }
 
-        li {
+        main li {
             margin-bottom: 0.5rem;
             color: #444;
         }
@@ -228,7 +239,7 @@
             text-decoration: none;
         }
 
-        a:hover {
+        main a:hover, footer a:hover {
             text-decoration: underline;
         }
 
@@ -370,12 +381,15 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="cookie-consent.css">
+    <script src="analytics-consent.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
                 <a href="index.html" class="logo-text">
+                    <img src="logo-icon.svg" alt="" class="logo-icon" width="40" height="40">
                     <span class="logo-eureka">EUREKA</span><span class="logo-engine">ENGINE</span>
                 </a>
             </div>
@@ -388,6 +402,7 @@
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#product">USB Army Knife PRO</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
@@ -603,6 +618,8 @@
         <p>&copy; 2025 Eureka Engine Ltd. All rights reserved | Company No. 16839453.</p>
         <p>Professional cybersecurity solutions for a safer digital world.</p>
         <div class="footer-links">
+            <a href="blog.html">Blog</a>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
             <a href="terms-of-use.html">Terms of Use</a>
             <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
             <a href="privacy-policy.html">Privacy Policy</a>

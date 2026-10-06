@@ -110,7 +110,7 @@
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1464px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -131,6 +131,14 @@
             align-items: center;
             letter-spacing: 0.15em;
         }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
 
         .logo-eureka {
             font-weight: 900;
@@ -157,6 +165,9 @@
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.9rem;
         }
 
         .nav-links a:hover {
@@ -373,7 +384,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
@@ -407,7 +418,7 @@
         }
 
         .product-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -966,12 +977,15 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="cookie-consent.css">
+    <script src="analytics-consent.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
                 <a href="eureka-engine-website.html" class="logo-text">
+                    <img src="logo-icon.svg" alt="" class="logo-icon" width="40" height="40">
                     <span class="logo-eureka">EUREKA</span><span class="logo-engine">ENGINE</span>
                 </a>
             </div>

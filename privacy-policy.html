@@ -49,7 +49,7 @@
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1464px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -71,6 +71,14 @@
             align-items: center;
             letter-spacing: 0.15em;
         }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
 
         .logo-eureka {
             font-weight: 900;
@@ -104,6 +112,9 @@
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
         }
@@ -188,12 +199,12 @@
             color: #444;
         }
 
-        ul, ol {
+        main ul, main ol {
             margin-left: 2rem;
             margin-bottom: 1rem;
         }
 
-        li {
+        main li {
             margin-bottom: 0.5rem;
             color: #444;
         }
@@ -215,7 +226,7 @@
             text-decoration: none;
         }
 
-        a:hover {
+        main a:hover, footer a:hover {
             text-decoration: underline;
         }
 
@@ -357,12 +368,15 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="cookie-consent.css">
+    <script src="analytics-consent.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
                 <a href="index.html" class="logo-text">
+                    <img src="logo-icon.svg" alt="" class="logo-icon" width="40" height="40">
                     <span class="logo-eureka">EUREKA</span><span class="logo-engine">ENGINE</span>
                 </a>
             </div>
@@ -375,6 +389,7 @@
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#product">USB Army Knife PRO</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
@@ -450,14 +465,14 @@
         </ul>
 
         <h2>5. Cookies and Tracking Technologies</h2>
-        <p>We use cookies and similar tracking technologies to enhance your experience on our website. Cookies are small data files stored on your device that help us:</p>
+        <p>We store your analytics choice in your browser's local storage under the name <code>cookieConsent</code>. This preference records only whether you accepted or declined analytics and is not used to track your activity.</p>
+        <p>Google Analytics is not loaded unless you select "Accept analytics". If you consent, Google Analytics may set cookies including <code>_ga</code> and <code>_ga_*</code> and collect information such as pages visited, approximate location, device and browser information, and referring pages. We use this information to:</p>
         <ul>
-            <li>Remember your preferences and settings</li>
             <li>Analyze website traffic and usage patterns</li>
-            <li>Improve website functionality</li>
-            <li>Deliver targeted advertising</li>
+            <li>Understand which content is useful to visitors</li>
+            <li>Improve website performance and functionality</li>
         </ul>
-        <p>You can control cookie settings through your browser preferences. However, disabling cookies may limit certain website features.</p>
+        <p>Declining analytics does not limit any website features. You can change your choice by clearing this site's cookies and local storage in your browser, then revisiting the site.</p>
 
         <h2>6. Data Security</h2>
         <p>We implement appropriate technical and organizational security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
@@ -537,6 +552,8 @@
         <p>&copy; 2025 Eureka Engine Ltd. All rights reserved | Company No. 16839453.</p>
         <p>Professional cybersecurity solutions for a safer digital world.</p>
         <div class="footer-links">
+            <a href="blog.html">Blog</a>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
             <a href="terms-of-use.html">Terms of Use</a>
             <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
             <a href="privacy-policy.html">Privacy Policy</a>
