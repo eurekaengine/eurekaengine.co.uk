@@ -632,7 +632,7 @@
         }
 
         .product-image {
-            background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+            background: radial-gradient(ellipse at 50% 50%, #14102e 0%, #05050c 100%);
             border-radius: 20px;
             padding: 3rem;
             display: flex;
@@ -643,9 +643,9 @@
         }
 
         .usb-icon {
-            width: 350px;
+            width: 100%;
+            max-width: 520px;
             height: auto;
-            filter: drop-shadow(0 15px 40px rgba(0,0,0,0.4));
         }
 
         .product-details h3 {
@@ -1584,7 +1584,7 @@
             </ul>
             <div class="hero-badge">🎯 Coming Soon</div>
             <div class="hero-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/TpL9U8Qx2uU?si=sVNxjxwk5jG7sgBD" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TpL9U8Qx2uU?si=sVNxjxwk5jG7sgBD&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="hero-cta-row">
                 <a href="https://www.eurekaengine.co.uk/#product" class="cta-secondary">Read more</a>
@@ -1623,34 +1623,7 @@
             
             <div class="product-showcase">
                 <div class="product-image">
-                    <svg class="usb-icon" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="USB Army Knife device illustration">
-                        <!-- USB Body -->
-                        <rect x="10" y="18" width="75" height="24" rx="3" fill="url(#usbGradient)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
-                        
-                        <!-- USB Connector -->
-                        <rect x="85" y="22" width="20" height="16" rx="2" fill="#E8E8E8" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>
-                        
-                        <!-- Connector Details -->
-                        <rect x="88" y="25" width="14" height="4" rx="1" fill="rgba(59,130,246,0.4)"/>
-                        <rect x="88" y="31" width="14" height="4" rx="1" fill="rgba(168,85,247,0.4)"/>
-                        
-                        <!-- LED Indicator -->
-                        <circle cx="25" cy="30" r="2.5" fill="#4ADE80" opacity="0.8">
-                            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
-                        </circle>
-                        
-                        <!-- Subtle line details on body -->
-                        <line x1="40" y1="22" x2="40" y2="38" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-                        <line x1="50" y1="22" x2="50" y2="38" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-                        
-                        <!-- Gradient definition -->
-                        <defs>
-                            <linearGradient id="usbGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#2D3748;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#1A202C;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                    <img class="usb-icon" src="images/usb-army-knife-neon.webp" alt="USB Army Knife device illustration" width="2000" height="1089" loading="lazy">
                 </div>
                 
                 <div class="product-details">
