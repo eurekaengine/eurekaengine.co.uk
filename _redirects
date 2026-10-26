@@ -1,0 +1,6 @@
+# Permanent redirects from the old blog URLs (Cloudflare Pages)
+/blog.html /blog/ 301
+/can-ai-design-circuit-board /blog/can-ai-design-circuit-board 301
+/can-ai-design-circuit-board.html /blog/can-ai-design-circuit-board 301
+/gpt-encrypted-disk-recovery /blog/gpt-encrypted-disk-recovery 301
+/gpt-encrypted-disk-recovery.html /blog/gpt-encrypted-disk-recovery 301

@@ -69,7 +69,7 @@
             <div class="cookie-content">
                 <div class="cookie-text">
                     <p><strong>We use analytics cookies</strong></p>
-                    <p>With your permission, Google Analytics helps us understand how the site is used. Declining will not affect the site. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+                    <p>With your permission, Google Analytics helps us understand how the site is used. Declining will not affect the site. See our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
                 </div>
                 <div class="cookie-buttons">
                     <button type="button" class="cookie-accept">Accept analytics</button>

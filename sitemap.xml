@@ -22,7 +22,7 @@
 
 <!-- Blog -->
   <url>
-    <loc>https://www.eurekaengine.co.uk/blog</loc>
+    <loc>https://www.eurekaengine.co.uk/blog/</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -30,7 +30,7 @@
 
   <!-- AI circuit board design -->
   <url>
-    <loc>https://www.eurekaengine.co.uk/can-ai-design-circuit-board</loc>
+    <loc>https://www.eurekaengine.co.uk/blog/can-ai-design-circuit-board</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
@@ -38,7 +38,7 @@
 
   <!-- GPT encrypted disk recovery -->
   <url>
-    <loc>https://www.eurekaengine.co.uk/gpt-encrypted-disk-recovery</loc>
+    <loc>https://www.eurekaengine.co.uk/blog/gpt-encrypted-disk-recovery</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>

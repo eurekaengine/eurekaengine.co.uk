@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eureka Engine Field Notes</title>
-    <link>https://www.eurekaengine.co.uk/blog</link>
+    <link>https://www.eurekaengine.co.uk/blog/</link>
     <atom:link href="https://www.eurekaengine.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Long-form stories from the practical edge of cybersecurity, hardware, digital forensics and AI.</description>
     <language>en-gb</language>
     <lastBuildDate>Wed, 05 Aug 2026 09:00:00 +0100</lastBuildDate>
     <item>
       <title>Can AI design a circuit board? We spent $360 finding out</title>
-      <link>https://www.eurekaengine.co.uk/can-ai-design-circuit-board</link>
-      <guid isPermaLink="true">https://www.eurekaengine.co.uk/can-ai-design-circuit-board</guid>
+      <link>https://www.eurekaengine.co.uk/blog/can-ai-design-circuit-board</link>
+      <guid isPermaLink="true">https://www.eurekaengine.co.uk/blog/can-ai-design-circuit-board</guid>
       <pubDate>Wed, 05 Aug 2026 09:00:00 +0100</pubDate>
       <category>AI + hardware</category>
       <description>I used AI to design a custom circuit board, had five prototypes assembled in China and learned where automation stops being engineering judgement.</description>
     </item>
     <item>
       <title>I gave GPT my 20 year old disk decryption challenge. It won.</title>
-      <link>https://www.eurekaengine.co.uk/gpt-encrypted-disk-recovery</link>
-      <guid isPermaLink="true">https://www.eurekaengine.co.uk/gpt-encrypted-disk-recovery</guid>
+      <link>https://www.eurekaengine.co.uk/blog/gpt-encrypted-disk-recovery</link>
+      <guid isPermaLink="true">https://www.eurekaengine.co.uk/blog/gpt-encrypted-disk-recovery</guid>
       <pubDate>Thu, 30 Jul 2026 09:00:00 +0100</pubDate>
       <category>Digital forensics</category>
       <description>How GPT reconstructed an old plain dm-crypt setup, searched a forensic disk image and recovered a deleted encryption key without breaking cryptography.</description>
