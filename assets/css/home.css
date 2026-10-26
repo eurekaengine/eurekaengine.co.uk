@@ -143,8 +143,15 @@ html {
 }
 
 .features-cta {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto 0;
     text-align: center;
-    margin-top: 2rem;
+    width: 100%;
+}
+
+.features-cta .cta-secondary {
+    margin: 0 auto;
 }
 
 .cta-secondary:hover {
