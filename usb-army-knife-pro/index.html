@@ -161,10 +161,20 @@ button:hover,a[style*="background: var(--grad)"]:hover{filter:brightness(1.1);bo
 .notify-cta:hover{animation-play-state:paused}
 .notify-cta svg{flex:0 0 auto}
 @media (max-width:560px){.dock{left:12px !important;right:12px !important;bottom:12px !important}.dock a{flex:1 1 0 !important;justify-content:center !important}.dock a.totop{flex:0 0 48px !important}footer>div{padding-bottom:124px !important}}
+.dock-label-short{display:none}
+@media (max-width:430px){.dock-label-full{display:none}.dock-label-short{display:inline}.dock a.ghost:not(.totop){padding:0 14px !important}.dock a.notify-cta{padding:0 16px !important}}
+@media (max-width:340px){.dock-label-short{display:none}}
 @media (max-width:767px){.hero-right{order:-1}}
 @media (prefers-reduced-motion: reduce){.hero-video{display:none !important}.hero-poster{display:block !important}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
 #page-top{position:sticky;top:0;z-index:40;background:#0d1013}
+.mobile-menu{display:none}
+.mobile-menu>summary::-webkit-details-marker{display:none}
+.mobile-menu>summary::marker{content:""}
+.mobile-menu-link:hover{background:#1c2229}
+.mobile-menu[open]>.hamburger-btn .icon-hamburger{display:none}
+.mobile-menu[open]>.hamburger-btn .icon-close{display:inline-flex !important}
+@media (max-width:900px){.nav-text-links{display:none !important}.nav-cta-desktop{display:none !important}.mobile-menu{display:block !important}}
 .lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(13,16,19,.92)}
 .lightbox:target{display:flex}
 #teaser-lightbox{z-index:101}
@@ -187,10 +197,24 @@ button:hover,a[style*="background: var(--grad)"]:hover{filter:brightness(1.1);bo
 </span>
 </a>
 <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 15px">
+<div class="nav-text-links" style="display: flex; align-items: center; gap: 8px 28px">
 <a href="#features" class="nav-link" style="text-decoration: none; color: #b7bfc8; padding: 10px 0">Features</a>
 <a href="#use-cases" class="nav-link" style="text-decoration: none; color: #b7bfc8; padding: 10px 0">Use cases</a>
 <a href="#faq" class="nav-link" style="text-decoration: none; color: #b7bfc8; padding: 10px 0">FAQ</a>
-<a href="https://sendfox.com/eurekaengine" target="_blank" rel="noopener noreferrer" class="notify-cta" style="display: inline-flex; align-items: center; gap: 7px; text-decoration: none; background: var(--grad); color: #fff; font-size: 19px; font-weight: 800; padding: 8px 18px; border-radius: 3px"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><rect x="1.5" y="4" width="17" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"></rect><path d="M2.5 5.5l7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Notify me</a>
+</div>
+<a href="https://sendfox.com/eurekaengine" target="_blank" rel="noopener noreferrer" class="notify-cta nav-cta-desktop" style="display: inline-flex; align-items: center; gap: 7px; text-decoration: none; background: var(--grad); color: #fff; font-size: 19px; font-weight: 800; padding: 8px 18px; border-radius: 3px"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><rect x="1.5" y="4" width="17" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"></rect><path d="M2.5 5.5l7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Notify me</a>
+<details class="mobile-menu">
+<summary class="hamburger-btn" aria-label="Open menu" style="list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; box-sizing: border-box; border: 1px solid #3a434d; border-radius: 3px; color: #eef1f3">
+<svg class="icon-hamburger" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
+<svg class="icon-close" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" style="display: none"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
+</summary>
+<div class="mobile-menu-panel" style="position: absolute; top: calc(100% + 10px); right: 0; display: flex; flex-direction: column; gap: 2px; min-width: 200px; padding: 8px; background: #151a1f; border: 1px solid #262d35; border-radius: 6px; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5); z-index: 60">
+<a href="#features" class="nav-link mobile-menu-link" style="text-decoration: none; color: #eef1f3; padding: 12px 14px; border-radius: 4px">Features</a>
+<a href="#use-cases" class="nav-link mobile-menu-link" style="text-decoration: none; color: #eef1f3; padding: 12px 14px; border-radius: 4px">Use cases</a>
+<a href="#faq" class="nav-link mobile-menu-link" style="text-decoration: none; color: #eef1f3; padding: 12px 14px; border-radius: 4px">FAQ</a>
+<a href="https://sendfox.com/eurekaengine" target="_blank" rel="noopener noreferrer" class="notify-cta mobile-menu-link" style="display: flex; align-items: center; justify-content: center; gap: 7px; text-decoration: none; background: var(--grad); color: #fff; font-size: 17px; font-weight: 800; padding: 12px 14px; border-radius: 4px; margin-top: 6px"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><rect x="1.5" y="4" width="17" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"></rect><path d="M2.5 5.5l7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Notify me</a>
+</div>
+</details>
 </nav>
 </div>
 </header>
@@ -644,11 +668,11 @@ button:hover,a[style*="background: var(--grad)"]:hover{filter:brightness(1.1);bo
 
 <!-- FLOATING ACTIONS -->
 <div class="dock" style="position: fixed; right: clamp(12px, 2vw, 28px); bottom: clamp(12px, 2vw, 28px); z-index: 50; display: flex; align-items: center; gap: 8px; padding: 8px; background: rgba(13, 16, 19, 0.88); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid #262d35; border-radius: 6px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45)">
-<a class="ghost" href="#teaser-lightbox" style="display: flex; align-items: center; gap: 10px; min-height: 48px; box-sizing: border-box; padding: 0 20px; text-decoration: none; color: #eef1f3; font-size: 17px; font-weight: 700; border: 1px solid #3a434d; border-radius: 3px; white-space: nowrap">
-<svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1l12 7-12 7z" fill="currentColor"></path></svg>
-Watch our teaser
+<a class="ghost" href="#teaser-lightbox" aria-label="Watch our teaser" style="display: flex; align-items: center; gap: 10px; min-height: 48px; min-width: 0; box-sizing: border-box; padding: 0 20px; text-decoration: none; color: #eef1f3; font-size: 17px; font-weight: 700; border: 1px solid #3a434d; border-radius: 3px; white-space: nowrap; overflow: hidden">
+<svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true" style="flex: 0 0 auto"><path d="M1 1l12 7-12 7z" fill="currentColor"></path></svg>
+<span class="dock-label-full">Watch our teaser</span><span class="dock-label-short">Watch teaser</span>
 </a>
-<a href="https://sendfox.com/eurekaengine" target="_blank" rel="noopener noreferrer" class="notify-cta" style="display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; box-sizing: border-box; padding: 0 22px; text-decoration: none; background: var(--grad); color: #fff; font-size: 19px; font-weight: 800; border-radius: 3px; white-space: nowrap"><svg width="17" height="17" viewBox="0 0 20 20" aria-hidden="true"><rect x="1.5" y="4" width="17" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"></rect><path d="M2.5 5.5l7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Notify me</a>
+<a href="https://sendfox.com/eurekaengine" target="_blank" rel="noopener noreferrer" class="notify-cta" aria-label="Notify me" style="display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; min-width: 0; box-sizing: border-box; padding: 0 22px; text-decoration: none; background: var(--grad); color: #fff; font-size: 19px; font-weight: 800; border-radius: 3px; white-space: nowrap; overflow: hidden"><svg width="17" height="17" viewBox="0 0 20 20" aria-hidden="true" style="flex: 0 0 auto"><rect x="1.5" y="4" width="17" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"></rect><path d="M2.5 5.5l7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="dock-label">Notify me</span></a>
 <a class="ghost totop" href="#page-top" aria-label="Back to top" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; box-sizing: border-box; flex: 0 0 48px; text-decoration: none; color: #eef1f3; border: 1px solid #3a434d; border-radius: 3px">
 <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 15V3M3 9l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path></svg>
 </a>
@@ -669,6 +693,21 @@ v.pause();
 }
 window.addEventListener('hashchange', syncLightboxVideos);
 syncLightboxVideos();
+
+var mobileMenu = document.querySelector('.mobile-menu');
+if (mobileMenu) {
+  mobileMenu.querySelectorAll('.mobile-menu-link').forEach(function(link){
+    link.addEventListener('click', function(){ mobileMenu.removeAttribute('open'); });
+  });
+  document.addEventListener('click', function(e){
+    if (mobileMenu.hasAttribute('open') && !mobileMenu.contains(e.target)) {
+      mobileMenu.removeAttribute('open');
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { mobileMenu.removeAttribute('open'); }
+  });
+}
 
 })();
 </script>
