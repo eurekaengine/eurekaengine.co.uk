@@ -165,9 +165,9 @@ a { color: var(--blue); }
 button, input, textarea, select { font-family: inherit; }
 .nav-links a, .eyebrow, .article-aside p, .post-meta, .article-meta { font-family: "IBM Plex Mono", Consolas, "Courier New", monospace; }
 h1, h2, h3, h4 { font-weight: 800; }
-.nav-links .nav-social { display: none; }
+@media (min-width: 769px) { .nav-links .nav-social { display: none !important; } }
 @media (max-width: 768px) {
     .nav-links .nav-social { display: flex; gap: 1rem; justify-content: center; }
     .nav-social a { align-items: center; border: 1px solid rgba(147, 197, 253, 0.4); border-radius: 50%; height: 44px; justify-content: center; width: 44px; }
 }
-.footer-logo { justify-content: center; margin-bottom: 1.5rem; }
+.footer-logo { display: flex; justify-content: center; margin: 0 auto 1.5rem; width: fit-content; }
