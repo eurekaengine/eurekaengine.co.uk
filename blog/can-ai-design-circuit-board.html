@@ -12,15 +12,15 @@
     <meta name="author" content="Eureka Engine Ltd">
     <link rel="canonical" href="https://www.eurekaengine.co.uk/blog/can-ai-design-circuit-board">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="/blog.css">
-    <link rel="stylesheet" href="/cookie-consent.css">
-    <script src="/analytics-consent.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/blog.css">
+    <link rel="stylesheet" href="/assets/css/cookie-consent.css">
+    <script src="/assets/js/analytics-consent.js" defer></script>
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.eurekaengine.co.uk/blog/can-ai-design-circuit-board">
     <meta property="og:title" content="Can AI design a circuit board? We spent $360 finding out">
     <meta property="og:description" content="From a blank KiCad page to five assembled boards: what AI accelerated, what every automated check missed and why the prototypes cost $360.">
-    <meta property="og:image" content="https://www.eurekaengine.co.uk/images/ai-circuit-board-social.jpg">
-    <meta property="og:image:secure_url" content="https://www.eurekaengine.co.uk/images/ai-circuit-board-social.jpg">
+    <meta property="og:image" content="https://www.eurekaengine.co.uk/assets/img/ai-circuit-board-social.jpg">
+    <meta property="og:image:secure_url" content="https://www.eurekaengine.co.uk/assets/img/ai-circuit-board-social.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -37,7 +37,7 @@
     <meta name="twitter:url" content="https://www.eurekaengine.co.uk/blog/can-ai-design-circuit-board">
     <meta name="twitter:title" content="Can AI design a circuit board? We spent $360 finding out">
     <meta name="twitter:description" content="I used AI to design a board, had it assembled in China and learned where automation stops being engineering judgement.">
-    <meta name="twitter:image" content="https://www.eurekaengine.co.uk/images/ai-circuit-board-social.jpg">
+    <meta name="twitter:image" content="https://www.eurekaengine.co.uk/assets/img/ai-circuit-board-social.jpg">
     <meta name="twitter:image:alt" content="Can AI Design a Circuit Board alongside an X-ray of the USB Army Knife PCB">
     <script type="application/ld+json">
     {
@@ -54,7 +54,7 @@
             "logo": { "@type": "ImageObject", "url": "https://www.eurekaengine.co.uk/favicon.png" }
         },
         "mainEntityOfPage": "https://www.eurekaengine.co.uk/blog/can-ai-design-circuit-board",
-        "image": "https://www.eurekaengine.co.uk/images/ai-circuit-board-social.jpg"
+        "image": "https://www.eurekaengine.co.uk/assets/img/ai-circuit-board-social.jpg"
     }
     </script>
 </head>
@@ -62,7 +62,7 @@
     <header class="site-header">
         <nav class="site-nav" aria-label="Main navigation">
             <a href="/" class="logo-text" aria-label="Eureka Engine home">
-                <img src="/logo-icon.svg" alt="" class="logo-icon" width="40" height="40">
+                <img src="/assets/img/logo-icon.svg" alt="" class="logo-icon" width="40" height="40">
                 <span class="logo-eureka">EUREKA</span><span class="logo-engine">ENGINE</span>
             </a>
             <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
@@ -138,14 +138,14 @@
                 <p>Routing became a negotiation between physics, KiCad and several scripts. Traces moved through vias, power reached internal planes, the antenna needed clear space and external features had to align with a future case. Copilot ran Freerouting in Docker, then wrote scripts to connect planes and repair awkward areas. A human might move two components to create a path; the AI often added another via, and sometimes wrote scripts to repair problems created by earlier scripts. Small changes could produce entirely different routes.</p>
 
                 <figure class="article-figure">
-                    <img src="/images/usb-army-knife-kicad-layout.png" alt="KiCad PCB editor view of the compact USB Army Knife board showing routed copper, components and the antenna keep-out zone" width="820" height="358" loading="lazy">
+                    <img src="/assets/img/usb-army-knife-kicad-layout.png" alt="KiCad PCB editor view of the compact USB Army Knife board showing routed copper, components and the antenna keep-out zone" width="820" height="358" loading="lazy">
                     <figcaption>The routed board in KiCad. Dense copper, internal connections and the antenna keep-out zone all had to fit inside a USB-stick outline.</figcaption>
                 </figure>
 
                 <p>Eventually the board passed DRC with no blocking errors or unconnected items. Only then did I investigate exactly what JLCPCB expected in its manufacturing package.</p>
 
                 <figure class="article-figure article-figure-light">
-                    <img src="/images/usb-army-knife-3d-render.png" alt="KiCad 3D rendering of the USB Army Knife PCB with processor module, microSD slot, controls and USB connector" width="820" height="358" loading="lazy">
+                    <img src="/assets/img/usb-army-knife-3d-render.png" alt="KiCad 3D rendering of the USB Army Knife PCB with processor module, microSD slot, controls and USB connector" width="820" height="358" loading="lazy">
                     <figcaption>KiCad's 3D render made the files look convincingly like a product. It could show component placement, but not whether every imported footprint was electrically correct.</figcaption>
                 </figure>
 
@@ -165,7 +165,7 @@
                 <p>The factory also asked me to confirm the polarity and placement of several components because the board lacked clear silkscreen orientation marks. During an earlier DRC cleanup, Copilot had removed some markings to clear warnings instead of finding somewhere better to put them. That made the automated report cleaner while making the board less obvious to the humans assembling it. It was another example of solving the local problem without understanding the wider process.</p>
 
                 <figure class="article-figure article-figure-light">
-                    <img src="/images/jlcpcb-polarity-review.png" alt="Factory review rendering of the USB Army Knife PCB with polarity and placement markers around components" width="2416" height="992" loading="lazy">
+                    <img src="/assets/img/jlcpcb-polarity-review.png" alt="Factory review rendering of the USB Army Knife PCB with polarity and placement markers around components" width="2416" height="992" loading="lazy">
                     <figcaption>JLCPCB's production review asked for human confirmation of component polarity and placement. A clean DRC report could not answer those manufacturing questions.</figcaption>
                 </figure>
 
@@ -175,14 +175,14 @@
                 <p>Manufacturing took about a week. JLCPCB sent photographs and X-rays along the way. I could not confidently diagnose much from them, but watching the design become physical was genuinely exciting.</p>
 
                 <figure class="article-figure article-figure-light">
-                    <img src="/images/usb-army-knife-pcba-xray.jpg" alt="Factory X-ray inspection image showing the assembled USB Army Knife PCB, processor module, solder joints and internal copper traces" width="1200" height="1200" loading="lazy">
+                    <img src="/assets/img/usb-army-knife-pcba-xray.jpg" alt="Factory X-ray inspection image showing the assembled USB Army Knife PCB, processor module, solder joints and internal copper traces" width="1200" height="1200" loading="lazy">
                     <figcaption>One of JLCPCB's five X-ray inspection views. The module, hidden joints, copper paths and dense component placement are visible through the assembled board.</figcaption>
                 </figure>
 
                 <h2 id="arrival">The box arrived</h2>
 
                 <figure class="article-figure article-figure-light">
-                    <img src="/images/usb-army-knife-real-device.png" alt="The assembled USB Army Knife circuit board outside its case, with its processor module, microSD slot, controls and USB connector visible" width="820" height="358">
+                    <img src="/assets/img/usb-army-knife-real-device.png" alt="The assembled USB Army Knife circuit board outside its case, with its processor module, microSD slot, controls and USB connector visible" width="820" height="358">
                     <figcaption>The assembled USB Army Knife prototype outside its case. It looks simple from above; getting from an idea to this board was not.</figcaption>
                 </figure>
 
@@ -292,7 +292,7 @@
 
     <footer class="site-footer">
         <a href="/" class="logo-text footer-logo" aria-label="Eureka Engine home">
-            <img src="/logo-icon.svg" alt="" class="logo-icon" width="40" height="40">
+            <img src="/assets/img/logo-icon.svg" alt="" class="logo-icon" width="40" height="40">
             <span class="logo-eureka">EUREKA</span><span class="logo-engine">ENGINE</span>
         </a>
         <p>&copy; 2025 Eureka Engine Ltd. All rights reserved | Company No. 16839453.</p>
@@ -314,7 +314,7 @@
     </footer>
 
     <button class="back-to-top" type="button" aria-label="Back to top">&uarr;</button>
-    <script src="/share.js" defer></script>
+    <script src="/assets/js/share.js" defer></script>
     <script>
         const menuButton = document.querySelector('.mobile-menu-toggle');
         const navigation = document.querySelector('.nav-links');

@@ -48,7 +48,7 @@
     
     <!-- Preload critical assets -->
     <link rel="preload" as="image" href="favicon.png">
-    <link rel="preload" as="image" href="hero-logo.svg">
+    <link rel="preload" as="image" href="/assets/img/hero-logo.svg">
     
     <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
@@ -101,8 +101,8 @@
             box-sizing: border-box;
         }
 
-        @font-face { font-family: 'Selawik'; font-weight: 300; font-style: normal; font-display: swap; src: url('fonts/selawik-light.woff2') format('woff2'); }
-        @font-face { font-family: 'Selawik'; font-weight: 700; font-style: normal; font-display: swap; src: url('fonts/selawik-bold.woff2') format('woff2'); }
+        @font-face { font-family: 'Selawik'; font-weight: 300; font-style: normal; font-display: swap; src: url('/assets/fonts/selawik-light.woff2') format('woff2'); }
+        @font-face { font-family: 'Selawik'; font-weight: 700; font-style: normal; font-display: swap; src: url('/assets/fonts/selawik-bold.woff2') format('woff2'); }
         button, input, textarea, select { font-family: inherit; }
 
         html {
@@ -1602,15 +1602,15 @@
         }
         .footer-logo { display: flex; justify-content: center; margin: 0 auto 1.5rem; width: fit-content; }
     </style>
-    <link rel="stylesheet" href="cookie-consent.css">
-    <script src="analytics-consent.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/cookie-consent.css">
+    <script src="/assets/js/analytics-consent.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
                 <a href="index.html" class="logo-text">
-                    <img src="logo-icon.svg" alt="" class="logo-icon" width="40" height="40">
+                    <img src="/assets/img/logo-icon.svg" alt="" class="logo-icon" width="40" height="40">
                     <span class="logo-eureka">EUREKA</span><span class="logo-engine">ENGINE</span>
                 </a>
             </div>
@@ -1685,7 +1685,7 @@
             
             <div class="product-showcase">
                 <div class="product-image">
-                    <img class="usb-icon" src="images/usb-army-knife-neon.webp" alt="USB Army Knife device illustration" width="2000" height="1089" loading="lazy">
+                    <img class="usb-icon" src="/assets/img/usb-army-knife-neon.webp" alt="USB Army Knife device illustration" width="2000" height="1089" loading="lazy">
                 </div>
                 
                 <div class="product-details">
@@ -1750,7 +1750,7 @@
                             <a class="blog-read-link" href="/blog/can-ai-design-circuit-board">Read the build story &rarr;</a>
                         </div>
                         <div class="blog-preview-visual" aria-hidden="true">
-                            <img src="images/usb-army-knife-kicad-layout.png" alt="" width="820" height="358" loading="lazy">
+                            <img src="/assets/img/usb-army-knife-kicad-layout.png" alt="" width="820" height="358" loading="lazy">
                         </div>
                     </article>
                     <article class="blog-feature" data-tag="// 02">
@@ -1761,7 +1761,7 @@
                             <a class="blog-read-link" href="/blog/gpt-encrypted-disk-recovery">Read the investigation &rarr;</a>
                         </div>
                         <div class="blog-preview-visual" aria-hidden="true">
-                            <img src="images/im-in-recovery.svg" alt="" width="1200" height="675" loading="lazy">
+                            <img src="/assets/img/im-in-recovery.svg" alt="" width="1200" height="675" loading="lazy">
                         </div>
                     </article>
                 </div>
@@ -1811,14 +1811,14 @@
 
     <section class="video-showcase">
         <video autoplay muted loop playsinline class="showcase-video" loading="lazy" preload="metadata">
-            <source src="Eureka_Logo_Reveal.mp4" type="video/mp4">
+            <source src="/assets/video/Eureka_Logo_Reveal.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </section>
 
     <footer>
         <a href="index.html" class="logo-text footer-logo" aria-label="Eureka Engine home">
-            <img src="logo-icon.svg" alt="" class="logo-icon" width="40" height="40">
+            <img src="/assets/img/logo-icon.svg" alt="" class="logo-icon" width="40" height="40">
             <span class="logo-eureka">EUREKA</span><span class="logo-engine">ENGINE</span>
         </a>
         <p>&copy; 2025 Eureka Engine Ltd. All rights reserved | Company No. 16839453.</p>
