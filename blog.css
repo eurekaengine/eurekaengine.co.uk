@@ -43,7 +43,11 @@ a { color: var(--blue); }
 .section-heading { align-items: end; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1rem; }
 .section-heading h2 { font-size: 2rem; }
 .section-heading span { color: var(--muted); font-size: 0.9rem; }
-.post-card { width: 100%; }
+.post-card { align-items: center; display: grid; gap: 2.5rem; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); width: 100%; }
+.post-card-media { aspect-ratio: 16 / 9; background: #0a0b0f; border: 1px solid var(--line); border-radius: 4px; display: block; grid-column: 2; grid-row: 1; overflow: hidden; }
+.post-card-media img { display: block; height: 100%; object-fit: cover; transition: transform 0.5s ease; width: 100%; }
+.post-card:hover .post-card-media img { transform: scale(1.04); }
+.post-card-copy { grid-column: 1; grid-row: 1; }
 .post-card + .post-card { border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 3rem; }
 .post-card-copy { padding: 1rem 0; }
 .post-meta { color: var(--muted); display: flex; flex-wrap: wrap; font-size: 0.9rem; gap: 0.65rem; margin-bottom: 1rem; }
@@ -173,3 +177,4 @@ h1, h2, h3, h4 { font-weight: 800; }
 .footer-logo { display: flex; justify-content: center; margin: 0 auto 1.5rem; width: fit-content; }
 .blog-hero .rss-link { color: #c9cedb; font-family: "IBM Plex Mono", Consolas, monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-decoration: underline; text-transform: uppercase; }
 .blog-hero .rss-link:hover { color: #fff; }
+@media (max-width: 900px) { .post-card { grid-template-columns: 1fr; gap: 1.25rem; } .post-card-media, .post-card-copy { grid-column: 1; } .post-card-media { grid-row: 1; } .post-card-copy { grid-row: 2; } }
