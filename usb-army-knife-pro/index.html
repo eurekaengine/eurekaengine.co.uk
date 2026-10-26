@@ -712,6 +712,14 @@ if (mobileMenu) {
   });
 }
 
+var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('a.totop[href="#page-top"]').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    window.scrollTo({ top: 0, left: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+});
+
 var siteHeader = document.getElementById('page-top');
 if (siteHeader) {
   var lastY = window.scrollY;
