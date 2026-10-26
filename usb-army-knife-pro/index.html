@@ -167,7 +167,10 @@ button:hover,a[style*="background: var(--grad)"]:hover{filter:brightness(1.1);bo
 @media (max-width:767px){.hero-right{order:-1}}
 @media (prefers-reduced-motion: reduce){.hero-video{display:none !important}.hero-poster{display:block !important}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
-#page-top{position:sticky;top:0;z-index:40;background:#0d1013}
+html{overflow-x:hidden}
+#page-top{position:sticky;top:0;z-index:40;background:#0d1013;transition:transform .28s ease}
+#page-top.header-hidden{transform:translateY(-100%)}
+@media (prefers-reduced-motion: reduce){#page-top{transition:none}}
 .mobile-menu{display:none}
 .mobile-menu>summary::-webkit-details-marker{display:none}
 .mobile-menu>summary::marker{content:""}
@@ -184,7 +187,7 @@ button:hover,a[style*="background: var(--grad)"]:hover{filter:brightness(1.1);bo
 <body>
 
 
-<div style="--accent: #ff5757; --accent2: #930df2; --grad: linear-gradient(90deg, #ff5757, #930df2); background: #0d1013; color: #eef1f3; font-family: 'Archivo', system-ui, sans-serif; font-size: 18px; line-height: 1.55; min-width: 0; overflow-x: hidden">
+<div style="--accent: #ff5757; --accent2: #930df2; --grad: linear-gradient(90deg, #ff5757, #930df2); background: #0d1013; color: #eef1f3; font-family: 'Archivo', system-ui, sans-serif; font-size: 18px; line-height: 1.55; min-width: 0">
 
 <!-- NAV -->
 <header id="page-top" style="border-bottom: 1px solid #262d35">
@@ -707,6 +710,31 @@ if (mobileMenu) {
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') { mobileMenu.removeAttribute('open'); }
   });
+}
+
+var siteHeader = document.getElementById('page-top');
+if (siteHeader) {
+  var lastY = window.scrollY;
+  var ticking = false;
+  function onScroll(){
+    var y = window.scrollY;
+    var menuOpen = mobileMenu && mobileMenu.hasAttribute('open');
+    if (!menuOpen) {
+      if (y > lastY && y > siteHeader.offsetHeight) {
+        siteHeader.classList.add('header-hidden');
+      } else if (y < lastY || y <= siteHeader.offsetHeight) {
+        siteHeader.classList.remove('header-hidden');
+      }
+    }
+    lastY = y;
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking) {
+      requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
 })();
