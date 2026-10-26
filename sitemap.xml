@@ -12,7 +12,15 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Blog -->
+  <!-- RSS feed -->
+  <url>
+    <loc>https://www.eurekaengine.co.uk/feed.xml</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+<!-- Blog -->
   <url>
     <loc>https://www.eurekaengine.co.uk/blog</loc>
     <lastmod>2026-08-05</lastmod>

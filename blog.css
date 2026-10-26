@@ -171,3 +171,5 @@ h1, h2, h3, h4 { font-weight: 800; }
     .nav-social a { align-items: center; border: 1px solid rgba(147, 197, 253, 0.4); border-radius: 50%; height: 44px; justify-content: center; width: 44px; }
 }
 .footer-logo { display: flex; justify-content: center; margin: 0 auto 1.5rem; width: fit-content; }
+.blog-hero .rss-link { color: #c9cedb; font-family: "IBM Plex Mono", Consolas, monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-decoration: underline; text-transform: uppercase; }
+.blog-hero .rss-link:hover { color: #fff; }
