@@ -1,3 +1,6 @@
+@font-face { font-family: 'Selawik'; font-weight: 300; font-style: normal; font-display: swap; src: url('fonts/selawik-light.woff2') format('woff2'); }
+@font-face { font-family: 'Selawik'; font-weight: 700; font-style: normal; font-display: swap; src: url('fonts/selawik-bold.woff2') format('woff2'); }
+
 :root {
     --ink: #101116;
     --muted: #606575;
@@ -10,14 +13,14 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--paper); color: var(--ink); font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; overflow-x: hidden; }
+body { background: var(--paper); color: var(--ink); font-family: "Archivo", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; overflow-x: hidden; }
 a { color: var(--blue); }
 
 .site-header { background: #000; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); color: #fff; left: 0; line-height: 1.6; padding: 1rem 0; position: fixed; right: 0; top: 0; width: 100%; z-index: 1000; }
 .site-nav { align-items: center; display: flex; justify-content: space-between; margin: 0 auto; max-width: 1464px; min-height: 70px; padding: 0 2rem; }
-.logo-text { align-items: center; display: flex; font-size: 1.5rem; letter-spacing: 0.15em; text-decoration: none; white-space: nowrap; }
+.logo-text { font-family: "Selawik", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; align-items: center; display: flex; font-size: 1.5rem; letter-spacing: 0.15em; text-decoration: none; white-space: nowrap; }
 .logo-icon { flex-shrink: 0; height: 40px; margin-right: 0.75rem; width: 40px; }
-.logo-eureka { background: linear-gradient(135deg, var(--blue), var(--violet)); background-clip: text; font-weight: 900; margin-right: 0.3rem; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.logo-eureka { color: #7c6cf6; -webkit-text-stroke: 0.045em #7c6cf6; background: linear-gradient(135deg, var(--blue), var(--violet)); background-clip: text; font-weight: 900; margin-right: 0.3rem; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .logo-engine { color: #fff; font-weight: 300; }
 .nav-links { align-items: center; display: flex; gap: 2rem; height: 100%; list-style: none; }
 .nav-links li { align-items: center; display: flex; }
@@ -67,7 +70,7 @@ a { color: var(--blue); }
 .article-body li + li { margin-top: 0.55rem; }
 .article-body blockquote { border-left: 4px solid var(--blue); color: #272b35; font-size: 1.15rem; font-weight: 600; padding: 0.4rem 0 0.4rem 1.5rem; }
 .article-body pre { background: #0d0f14; border-left: 4px solid var(--violet); color: #dbe8ff; overflow-x: auto; padding: 1.25rem; }
-.article-body code { font-family: Consolas, "Courier New", monospace; }
+.article-body code { font-family: "IBM Plex Mono", Consolas, "Courier New", monospace; }
 .article-body :not(pre) > code { background: #eef1f6; border-radius: 4px; overflow-wrap: anywhere; padding: 0.1em 0.3em; }
 .article-figure { margin: 2.8rem 0; }
 .article-figure picture { display: block; }
@@ -151,10 +154,19 @@ a { color: var(--blue); }
 .share-bar { align-items: center; display: flex; flex-wrap: wrap; gap: 0.6rem; }
 .share-hero { margin-top: 1.75rem; }
 .share-end { border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1.5rem; }
-.share-label { color: var(--muted); font-family: Consolas, "Courier New", monospace; font-size: 0.8rem; letter-spacing: 0.15em; margin-right: 0.4rem; text-transform: uppercase; }
+.share-label { color: var(--muted); font-family: "IBM Plex Mono", Consolas, "Courier New", monospace; font-size: 0.8rem; letter-spacing: 0.15em; margin-right: 0.4rem; text-transform: uppercase; }
 .share-hero .share-label { color: #9da4b5; }
 .share-btn { align-items: center; background: transparent; border: 1px solid var(--line); border-radius: 4px; color: var(--ink); cursor: pointer; display: inline-flex; font: inherit; font-size: 0.85rem; gap: 0.45rem; line-height: 1; padding: 0.55rem 0.8rem; text-decoration: none; transition: 0.2s ease; }
 .share-hero .share-btn { border-color: rgba(147, 197, 253, 0.35); color: #e6ecff; }
 .share-btn:hover, .share-btn:focus-visible { background: linear-gradient(135deg, var(--blue), var(--violet)); border-color: transparent; box-shadow: 0 0 18px rgba(168, 85, 247, 0.45); color: #fff; }
 .share-btn.copied { background: #16a34a; border-color: transparent; color: #fff; }
 @media (max-width: 768px) { .share-btn span { display: none; } .share-btn { padding: 0.65rem; } .share-btn.copied span { display: inline; } }
+
+button, input, textarea, select { font-family: inherit; }
+.nav-links a, .eyebrow, .article-aside p, .post-meta, .article-meta { font-family: "IBM Plex Mono", Consolas, "Courier New", monospace; }
+h1, h2, h3, h4 { font-weight: 800; }
+.nav-links .nav-social { display: none; }
+@media (max-width: 768px) {
+    .nav-links .nav-social { display: flex; gap: 1rem; justify-content: center; }
+    .nav-social a { align-items: center; border: 1px solid rgba(147, 197, 253, 0.4); border-radius: 50%; height: 44px; justify-content: center; width: 44px; }
+}
