@@ -143,7 +143,8 @@ html {
 }
 
 .features-cta {
-    margin-top: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
 }
 
 .cta-secondary:hover {
