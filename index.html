@@ -871,9 +871,58 @@
             box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 30px rgba(10, 5, 40, 0.45);
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
             display: grid;
+            flex: 0 0 100%;
             gap: 3rem;
             grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+            scroll-snap-align: start;
         }
+
+        .blog-track {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .blog-track::-webkit-scrollbar { display: none; }
+
+        .blog-carousel-controls {
+            align-items: center;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.25rem;
+        }
+
+        .blog-carousel-btn {
+            background: rgba(4, 8, 22, 0.7);
+            border: 1px solid rgba(147, 197, 253, 0.5);
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.1rem;
+            height: 42px;
+            width: 42px;
+        }
+
+        .blog-carousel-btn:hover:not(:disabled) { background: rgba(168, 85, 247, 0.5); }
+        .blog-carousel-btn:disabled { cursor: default; opacity: 0.35; }
+
+        .blog-carousel-dots { display: flex; gap: 0.5rem; }
+
+        .blog-carousel-dot {
+            background: rgba(255, 255, 255, 0.35);
+            border: 0;
+            border-radius: 50%;
+            cursor: pointer;
+            height: 10px;
+            padding: 0;
+            width: 10px;
+        }
+
+        .blog-carousel-dot[aria-current="true"] { background: #fff; }
 
         .blog-feature:hover {
             border-color: rgba(192, 132, 252, 0.8);
@@ -881,7 +930,7 @@
         }
 
         .blog-feature::before {
-            content: "// LATEST";
+            content: attr(data-tag);
             position: absolute;
             top: 0.8rem;
             right: 1.1rem;
@@ -1651,17 +1700,37 @@
         <div class="blog-preview-inner">
             <p class="blog-preview-kicker">Field notes</p>
             <h2 class="blog-preview-heading">From the blog</h2>
-            <article class="blog-feature">
-                <div class="blog-feature-copy">
-                    <p class="blog-feature-meta"><time datetime="2026-08-05">5 August 2026</time> &middot; AI + hardware &middot; 15 min read</p>
-                    <h3><a href="can-ai-design-circuit-board.html">Can AI design a circuit board? We spent $360 finding out</a></h3>
-                    <p>I used AI to design a custom board, had five prototypes assembled in China and learned where automation stops being engineering judgement.</p>
-                    <a class="blog-read-link" href="can-ai-design-circuit-board.html">Read the build story &rarr;</a>
+            <div class="blog-carousel" role="region" aria-roledescription="carousel" aria-label="Latest blog articles">
+                <div class="blog-track" id="blogTrack">
+                    <article class="blog-feature" data-tag="// LATEST">
+                        <div class="blog-feature-copy">
+                            <p class="blog-feature-meta"><time datetime="2026-08-05">5 August 2026</time> &middot; AI + hardware &middot; 15 min read</p>
+                            <h3><a href="can-ai-design-circuit-board.html">Can AI design a circuit board? We spent $360 finding out</a></h3>
+                            <p>I used AI to design a custom board, had five prototypes assembled in China and learned where automation stops being engineering judgement.</p>
+                            <a class="blog-read-link" href="can-ai-design-circuit-board.html">Read the build story &rarr;</a>
+                        </div>
+                        <div class="blog-preview-visual" aria-hidden="true">
+                            <img src="images/usb-army-knife-kicad-layout.png" alt="" width="820" height="358" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="blog-feature" data-tag="// 02">
+                        <div class="blog-feature-copy">
+                            <p class="blog-feature-meta"><time datetime="2026-07-30">30 July 2026</time> &middot; Digital forensics &middot; 20 min read</p>
+                            <h3><a href="gpt-encrypted-disk-recovery.html">I gave GPT my 20 year old disk decryption challenge. It won.</a></h3>
+                            <p>GPT did not break AES or brute force a password. It read old Linux configuration, reconstructed a forgotten dm-crypt setup and searched a disk image for the key bytes I had deleted years earlier.</p>
+                            <a class="blog-read-link" href="gpt-encrypted-disk-recovery.html">Read the investigation &rarr;</a>
+                        </div>
+                        <div class="blog-preview-visual" aria-hidden="true">
+                            <img src="images/im-in-recovery.svg" alt="" width="1200" height="675" loading="lazy">
+                        </div>
+                    </article>
                 </div>
-                <div class="blog-preview-visual" aria-hidden="true">
-                    <img src="images/usb-army-knife-kicad-layout.png" alt="" width="820" height="358" loading="lazy">
+                <div class="blog-carousel-controls">
+                    <button type="button" class="blog-carousel-btn" id="blogPrev" aria-label="Previous article">&larr;</button>
+                    <div class="blog-carousel-dots" id="blogDots"></div>
+                    <button type="button" class="blog-carousel-btn" id="blogNext" aria-label="Next article">&rarr;</button>
                 </div>
-            </article>
+            </div>
         </div>
     </section>
 
@@ -1805,13 +1874,47 @@
                 bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
             }, { passive: true });
 
+            const track = document.getElementById('blogTrack');
+            if (track) {
+                const slides = Array.from(track.children).slice(0, 3);
+                const prev = document.getElementById('blogPrev');
+                const next = document.getElementById('blogNext');
+                const dots = document.getElementById('blogDots');
+                const go = function(i) {
+                    track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+                };
+                const current = function() {
+                    return Math.round(track.scrollLeft / (slides[0].offsetWidth + 24));
+                };
+                slides.forEach(function(_, i) {
+                    const d = document.createElement('button');
+                    d.type = 'button';
+                    d.className = 'blog-carousel-dot';
+                    d.setAttribute('aria-label', 'Show article ' + (i + 1));
+                    d.addEventListener('click', function() { go(i); });
+                    dots.appendChild(d);
+                });
+                const update = function() {
+                    const c = Math.max(0, Math.min(slides.length - 1, current()));
+                    prev.disabled = c === 0;
+                    next.disabled = c === slides.length - 1;
+                    Array.from(dots.children).forEach(function(d, i) {
+                        d.setAttribute('aria-current', i === c ? 'true' : 'false');
+                    });
+                };
+                prev.addEventListener('click', function() { go(Math.max(0, current() - 1)); });
+                next.addEventListener('click', function() { go(Math.min(slides.length - 1, current() + 1)); });
+                track.addEventListener('scroll', update, { passive: true });
+                update();
+            }
+
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             if (reduceMotion || !('IntersectionObserver' in window)) return;
 
             const groups = [
                 ['section h2, .blog-preview-kicker, .tagline, .product-subtitle, .coming-soon', ''],
                 ['.about-card', ''],
-                ['.product-intro, .professional-advantage-title, .product-closing, .social-cta-box, .social-section, .blog-feature', ''],
+                ['.product-intro, .professional-advantage-title, .product-closing, .social-cta-box, .social-section, .blog-carousel', ''],
                 ['.product-image', 'from-left'],
                 ['.product-details > h4', 'from-right'],
                 ['.features li', 'from-right'],
