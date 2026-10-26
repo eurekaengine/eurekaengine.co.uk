@@ -142,6 +142,10 @@ html {
     transition: all 0.3s;
 }
 
+.features-cta {
+    margin-top: 1.5rem;
+}
+
 .cta-secondary:hover {
     background: rgba(168,85,247,0.2);
     transform: translateY(-3px);
