@@ -1,5 +1,5 @@
 # robots.txt for Eureka Engine
-# https://eurekaengine.co.uk
+# https://www.eurekaengine.co.uk
 
 User-agent: *
 Allow: /
@@ -23,7 +23,7 @@ Allow: /
 # Disallow: /404.html
 
 # Sitemap location
-Sitemap: https://eurekaengine.co.uk/sitemap.xml
+Sitemap: https://www.eurekaengine.co.uk/sitemap.xml
 
 # Crawl-delay for polite bots
 Crawl-delay: 1
